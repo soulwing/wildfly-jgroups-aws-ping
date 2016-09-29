@@ -1,4 +1,4 @@
-<module xmlns="urn:jboss:module:1.3" name="com.amazonaws.core" slot="soulwing">
+<module xmlns="urn:jboss:module:1.3" name="com.amazonaws.core" slot="awsping">
 
   <resources>
     <resource-root path="aws-java-sdk-core-${version.com.amazonaws.api}.jar"/>

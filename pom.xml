@@ -52,7 +52,7 @@
             </goals>
             <phase>package</phase>
             <configuration>
-              <outputDirectory>${modules.staging.directory}/com/amazonaws/core/soulwing</outputDirectory>
+              <outputDirectory>${modules.staging.directory}/com/amazonaws/core/awsping</outputDirectory>
               <artifactItems>
                 <artifactItem>
                   <groupId>com.amazonaws</groupId>
@@ -82,7 +82,7 @@
             </goals>
             <phase>package</phase>
             <configuration>
-              <outputDirectory>${modules.staging.directory}/com/amazonaws/ec2/soulwing</outputDirectory>
+              <outputDirectory>${modules.staging.directory}/com/amazonaws/ec2/awsping</outputDirectory>
               <artifactItems>
                 <artifactItem>
                   <groupId>com.amazonaws</groupId>
@@ -100,7 +100,7 @@
             </goals>
             <phase>package</phase>
             <configuration>
-              <outputDirectory>${modules.staging.directory}/org/jgroups/aws/soulwing</outputDirectory>
+              <outputDirectory>${modules.staging.directory}/org/jgroups/aws/awsping</outputDirectory>
               <artifactItems>
                 <artifactItem>
                   <groupId>com.meltmedia.jgroups</groupId>
