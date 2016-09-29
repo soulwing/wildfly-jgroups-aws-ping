@@ -7,8 +7,8 @@
   <dependencies>
     <module name="javax.api"/>
     <module name="org.jgroups"/>
-    <module name="com.amazonaws.ec2" slot="soulwing"/>
-    <module name="com.amazonaws.core" slot="soulwing"/>
+    <module name="com.amazonaws.ec2" slot="awsping"/>
+    <module name="com.amazonaws.core" slot="awsping"/>
     <module name="org.slf4j.api"/>
   </dependencies>
 
