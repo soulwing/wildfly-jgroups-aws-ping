@@ -13,8 +13,7 @@
   <packaging>pom</packaging>
   <name>${project.artifactId}</name>
   <description>
-    A Wildfly modules distribution that adds AWS_PING support to the JGroups
-    subsystem.
+    A Wildfly modules distribution that adds AWS_PING support for the JGroups subsystem.
   </description>
   <build>
     <plugins>
