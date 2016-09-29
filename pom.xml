@@ -8,13 +8,118 @@
     <artifactId>soulwing-parent</artifactId>
     <version>13</version>
   </parent>
-  <artifactId>wildfly-jgroups-aws</artifactId>
+  <artifactId>wildfly-jgroups-aws-ping</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>${project.artifactId}</name>
   <description>
     A Wildfly modules distribution that adds AWS_PING support to the JGroups
     subsystem.
   </description>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-module-descriptors</id>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <outputDirectory>${modules.staging.directory}</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>src/main/modules</directory>
+                  <filtering>true</filtering>
+                  <includes>
+                    <include>**/module.xml</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-aws-core-dependencies</id>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <outputDirectory>${modules.staging.directory}/com/amazonaws/core/soulwing</outputDirectory>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.amazonaws</groupId>
+                  <artifactId>aws-java-sdk-core</artifactId>
+                  <version>${version.com.amazonaws.api}</version>
+                  <type>jar</type>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>com.amazonaws</groupId>
+                  <artifactId>jmespath-java</artifactId>
+                  <version>${version.com.amazonaws.jmespath}</version>
+                  <type>jar</type>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>com.fasterxml.jackson.dataformat</groupId>
+                  <artifactId>jackson-dataformat-cbor</artifactId>
+                  <version>${version.com.fasterxml.jackson.dataformat.cbor}</version>
+                  <type>jar</type>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-aws-ec2-dependencies</id>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <outputDirectory>${modules.staging.directory}/com/amazonaws/ec2/soulwing</outputDirectory>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.amazonaws</groupId>
+                  <artifactId>aws-java-sdk-ec2</artifactId>
+                  <version>${version.com.amazonaws.api}</version>
+                  <type>jar</type>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-jgroups-aws-dependencies</id>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <outputDirectory>${modules.staging.directory}/org/jgroups/aws/soulwing</outputDirectory>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.meltmedia.jgroups</groupId>
+                  <artifactId>jgroups-aws</artifactId>
+                  <version>${version.com.meltmedia.jgroups}</version>
+                  <type>jar</type>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
   <properties>
+    <version.com.amazonaws.api>1.11.32</version.com.amazonaws.api>
+    <version.com.amazonaws.jmespath>1.0</version.com.amazonaws.jmespath>
+    <version.com.meltmedia.jgroups>1.4.0</version.com.meltmedia.jgroups>
+    <version.com.fasterxml.jackson.dataformat.cbor>2.6.6</version.com.fasterxml.jackson.dataformat.cbor>
+    <modules.staging.directory>${project.build.directory}/modules</modules.staging.directory>
   </properties>
 </project>
