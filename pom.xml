@@ -31,7 +31,7 @@
               <outputDirectory>${modules.staging.directory}</outputDirectory>
               <resources>
                 <resource>
-                  <directory>src/main/modules</directory>
+                  <directory>src/modules</directory>
                   <filtering>true</filtering>
                   <includes>
                     <include>**/module.xml</include>
@@ -109,6 +109,28 @@
                   <type>jar</type>
                 </artifactItem>
               </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>create-modules-assembly</id>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <formats>
+                <format>dir</format>
+                <format>tar.gz</format>
+                <format>zip</format>
+              </formats>
+              <descriptors>
+                <descriptor>src/assembly/modules-assembly.xml</descriptor>
+              </descriptors>
             </configuration>
           </execution>
         </executions>
