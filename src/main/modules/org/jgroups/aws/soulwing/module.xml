@@ -1,0 +1,16 @@
+<module xmlns="urn:jboss:module:1.3" name="org.jgroups.aws" slot="soulwing">
+
+  <resources>
+    <resource-root path="jgroups-aws-${version.com.meltmedia.jgroups}.jar"/>
+  </resources>
+
+  <dependencies>
+    <module name="javax.api"/>
+    <module name="org.jgroups"/>
+    <module name="com.amazonaws.ec2" slot="soulwing"/>
+    <module name="com.amazonaws.core" slot="soulwing"/>
+    <module name="org.slf4j.api"/>
+  </dependencies>
+
+</module>
+
