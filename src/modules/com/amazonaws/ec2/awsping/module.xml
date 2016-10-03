@@ -6,11 +6,9 @@
 
   <dependencies>
     <module name="javax.api"/>
-    <module name="org.apache.commons.codec"/>
+    <module name="com.amazonaws.core" slot="awsping"/>
     <module name="org.apache.commons.logging"/>
     <module name="org.apache.httpcomponents"/>
-    <module name="org.joda.time"/>
-    <module name="com.fasterxml.jackson.core.jackson-databind"/>
   </dependencies>
 
 </module>
