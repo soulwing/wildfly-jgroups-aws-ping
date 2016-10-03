@@ -13,6 +13,7 @@
     <module name="org.apache.httpcomponents"/>
     <module name="org.joda.time"/>
     <module name="com.fasterxml.jackson.core.jackson-databind"/>
+    <module name="com.fasterxml.jackson.core.jackson-core"/>
   </dependencies>
 
 </module>
