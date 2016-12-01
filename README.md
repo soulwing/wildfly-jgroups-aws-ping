@@ -3,6 +3,8 @@ wildfly-jgroups-aws-ping
 
 A Wildfly modules distribution that adds `AWS_PING` support for the JGroups subsystem.
 
+By adding this module to your Wildfly application server and configuring Wildfly's JGroups subsystem, you can run a Wildfly cluster on AWS EC2. Unlike other approaches using S3_PING or JDBC_PING, using the module imposes no additional dependencies for cluster operation -- it relies only on EC2 metadata tags to identify cluster members.
+
 Installation
 -------------
 
