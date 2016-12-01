@@ -16,6 +16,28 @@ To install the module, simply untar or unzip it into your Wildfly distribution. 
 tar -C $WILDFLY_HOME -xvf target/wildfly-jgroups-aws-ping-1.0.4-modules.tar.gz
 ```
 
+Required IAM Policy
+-------------------
+
+AWS_PING uses the AWS API to collect EC2 instance metadata this requires an IAM policy.
+
+``` json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "ec2:Describe*",
+      "Resource": "*"
+    }
+}
+```
+
+Either create an IAM policy with this statement or, if you prefer, use the existing `AmazonEC2ReadOnlyAccessPolicy` -- this pre-defined policy includes the permission shown above along with a small number of other permission.
+
+* If you are using the EC2 Container Service (ECS), assign this policy to the IAM role that is assigned to your ECS task(s) that run Wildfly containers.
+* If you are running Wildfly directly on EC2 instances, assign this policy to the IAM role that is assigned to your EC2 instances.
+
 Using AWS_PING for Wildfly Clustering
 -------------------------------------
 
