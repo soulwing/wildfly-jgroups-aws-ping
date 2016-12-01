@@ -39,8 +39,8 @@ Wildfly uses JGroups internally as part of its cluster configuration. You can us
 
 ### AWS_PING with Dockerized Wildfly
 
-If you're running Wildfly in a Docker container on AWS (e.g using the EC2 Container Service), there's one more 
-configuration needed. The _external address_ advertised by an AWS_PING node must be an address that can be reached from another EC2 instance. The default behavior, when running in Docker container is to use the container's IP address, which generally isn't reachable from other EC2 instances.
+If you're running Wildfly in a Docker container on AWS (e.g using the EC2 Container Service), there a little more 
+configuration needed. The _external address_ advertised by an AWS_PING node must be an address that can be reached from another EC2 instance. The default behavior, when running in a Docker container is to use the container's IP address, which generally isn't reachable from other EC2 instances.
 
 The IP address that you usually want to use is the private IP address of the EC2 instance that runs the Docker container with your Wildfly instance. Getting the private IP address using the EC2 metadata service is pretty easy. In the startup script for the Docker container that hosts Wildfly, you can get the private IP address of the EC2 instance and put it in an environment variable.
 
