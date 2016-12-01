@@ -30,6 +30,7 @@ AWS_PING uses the AWS API to collect EC2 instance metadata this requires an IAM 
       "Action": "ec2:Describe*",
       "Resource": "*"
     }
+  ]
 }
 ```
 
