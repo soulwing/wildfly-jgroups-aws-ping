@@ -1,13 +1,18 @@
 wildfly-jgroups-aws-ping
 ========================
 
-A Wildfly modules distribution that adds `AWS_PING` support for the JGroups
-subsystem.
+A Wildfly modules distribution that adds `AWS_PING` support for the JGroups subsystem.
 
 Installation
 -------------
 
-Install build and unpack the module in your Wildfly installation.
+If you have a working Maven build environment, you can build from source using `mvn install`. If you don't want to bother with that see the [releases](/soulwing/wildfly-jgroups-aws-ping/releases) page to download a binary distribution. Please verify the PGP signature using my [public key](https://keybase.io/ceharris).
+
+To install the module, simply untar or unzip it into your Wildfly distribution. If you set `WILDFLY_HOME` to the base directory for a Wildfly distribution, you could install the module using this command.
+
+```
+tar -C $WILDFLY_HOME -xvf target/wildfly-jgroups-aws-ping-1.0.4-modules.tar.gz
+```
 
 Using AWS_PING for Wildfly Clustering
 -------------------------------------
