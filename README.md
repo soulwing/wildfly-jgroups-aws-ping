@@ -36,8 +36,8 @@ AWS_PING uses the AWS API to collect EC2 instance metadata. This requires an IAM
 
 Either create an IAM policy with this statement or, if you prefer, use the existing `AmazonEC2ReadOnlyAccessPolicy` -- this pre-defined policy includes the permission shown above along with a small number of other permissions.
 
-* If you are using the EC2 Container Service (ECS), assign this policy to the IAM role that is assigned to your ECS task(s) that run Wildfly containers.
-* If you are running Wildfly directly on EC2 instances, assign this policy to the IAM role that is assigned to your EC2 instances.
+* If you are using the EC2 Container Service (ECS), attach this policy to the IAM role that is assigned to your ECS task(s) that run Wildfly containers.
+* If you are running Wildfly directly on EC2 instances, attach this policy to the IAM role that is assigned to your EC2 instances.
 
 Using AWS_PING for Wildfly Clustering
 -------------------------------------
