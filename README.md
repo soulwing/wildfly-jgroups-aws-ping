@@ -19,7 +19,7 @@ tar -C $WILDFLY_HOME -xvf target/wildfly-jgroups-aws-ping-1.0.4-modules.tar.gz
 Required IAM Policy
 -------------------
 
-AWS_PING uses the AWS API to collect EC2 instance metadata this requires an IAM policy.
+AWS_PING uses the AWS API to collect EC2 instance metadata. This requires an IAM policy that allows access to the `ec2:Describe*` actions.
 
 ``` json
 {
