@@ -63,7 +63,7 @@ Additionally, your container will need to have the ports specified in the `jgrou
 Using AWS_PING with JGroups in an Application
 ---------------------------------------------
 
-If you application uses JGroups directly, you can use the AWS_PING protocol by replacing in your JGroups stack the current discovery protocol (`MPING` or `TCPPING`) with the `AWS_PING` configuration like this:
+If your application uses JGroups directly, you can use the AWS_PING protocol by replacing in your JGroups stack the current discovery protocol (`MPING` or `TCPPING`) with the `AWS_PING` configuration like this:
 
 ``` xml
   <protocol type="com.meltmedia.jgroups.aws.AWS_PING" module="org.jgroups.aws:awsping">
