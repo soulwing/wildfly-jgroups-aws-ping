@@ -158,7 +158,7 @@
   <properties>
     <version.com.amazonaws.api>1.11.32</version.com.amazonaws.api>
     <version.com.amazonaws.jmespath>1.0</version.com.amazonaws.jmespath>
-    <version.com.meltmedia.jgroups>1.4.0</version.com.meltmedia.jgroups>
+    <version.com.meltmedia.jgroups>1.6.1</version.com.meltmedia.jgroups>
     <version.com.fasterxml.jackson.dataformat.cbor>2.6.6</version.com.fasterxml.jackson.dataformat.cbor>
     <modules.staging.directory>${project.build.directory}/modules</modules.staging.directory>
   </properties>
