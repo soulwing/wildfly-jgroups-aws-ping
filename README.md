@@ -39,6 +39,17 @@ Either create an IAM policy with this statement or, if you prefer, use the exist
 * If you are using the EC2 Container Service (ECS), attach this policy to the IAM role that is assigned to your ECS task(s) that run Wildfly containers.
 * If you are running Wildfly directly on EC2 instances, attach this policy to the IAM role that is assigned to your EC2 instances.
 
+Instance Metadata Hostname
+--------------------------
+
+The underlying [`AWS_PING`](https://github.com/meltmedia/jgroups-aws) module relies on resolving the hostname `instance-data` to retrieve the instance metadata. On many EC2 instances built from certain AMIs, this hostname resolves to 169.254.169.254 as expected. On some AMIs, however this name is not defined, resulting in an error message _failed to get instance identity_ during the JGroups initialization.
+
+As noted in issue [#4](https://github.com/soulwing/wildfly-jgroups-aws-ping/issues/4) (thanks to @battmush), you can work around this error by placing an entry in the `/etc/hosts` file for your EC2 instance, as follows.
+
+```
+169.254.169.254 instance-data
+```
+
 Using AWS_PING for Wildfly Clustering
 -------------------------------------
 
